@@ -29,6 +29,9 @@ int print_main(int);
 int print_char(va_list);
 int print_percent(void);
 int print_str(va_list);
+int print_decimal(va_list);
+char *_itoa(int n);
+void _reverse(char *);
 int checker(format, int, struct tFormat fmtF[], va_list);
 /* END */
 

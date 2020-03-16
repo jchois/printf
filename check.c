@@ -21,14 +21,14 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 		}
 		else
 		{
-			while (j < 3)
+			while (j < 4)
 			{
 				if (((*(fmt + i + 1)) == fmtF[j].id[1]) && flag == 0)
 				{
 					ou += (fmtF[j].f)(fm), j = 0, flag = 1;
 					break;
 				}
-				if (j == 2 && flag == 0)
+				if (j == 3 && flag == 0)
 				{
 					if ((*(fmt + i + 1)))
 						ou += print_main(*(fmt + i));

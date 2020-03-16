@@ -13,6 +13,7 @@ int _printf(format fm, ...)
 		{"%c", print_char},
 		{"%s", print_str},
 		{"%%", print_percent},
+		{"%d", print_decimal},
 	};
 
 	if (!fm)

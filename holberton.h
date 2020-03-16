@@ -29,7 +29,7 @@ int print_main(int);
 int print_char(va_list);
 int print_percent(void);
 int print_str(va_list);
-void checker(format, int, struct tFormat fmtF[], va_list);
+int checker(format, int, struct tFormat fmtF[], va_list);
 /* END */
 
 #endif /*_PRINTF_*/

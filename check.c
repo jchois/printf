@@ -8,30 +8,35 @@
  *
  * Return: It returns characters.
  */
-void checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
+int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 {
-	int i, j;
+	int i, j, ou;
 
-	i = j = 0;
-	while (fmt && *(fmt + i))
+	i = ou = j = 0;
+	while ((fmt && *(fmt + i)))
 	{
 		if ((*(fmt + i) != '%') && flag == 0)
-			print_main(*(fmt + i));
+		{
+			ou += print_main(*(fmt + i));
+		}
 		else
 		{
 			while (j < 3)
 			{
 				if (((*(fmt + i + 1)) == fmtF[j].id[1]) && flag == 0)
 				{
-					(fmtF[j].f)(fm);
-					j = 0, flag = 1;
+					ou += (fmtF[j].f)(fm), j = 0, flag = 1;
 					break;
 				}
 				if (j == 2 && flag == 0)
 				{
-					print_main(*(fmt + i));
-					j = 0;
-					break;
+					if ((*(fmt + i + 1)))
+						ou += print_main(*(fmt + i));
+					else
+					{
+						ou = -1, flag = 1, j = 0;
+						break;
+					}
 				}
 				if (flag == 1)
 				{
@@ -43,4 +48,6 @@ void checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 		}
 		i++;
 	}
+	va_end(fm);
+	return (ou);
 }

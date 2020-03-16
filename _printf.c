@@ -15,14 +15,11 @@ int _printf(format fm, ...)
 		{"%%", print_percent},
 	};
 
-	if (fm == NULL)
+	if (!fm)
 		return (-1);
 
 	flag = 0;
 	va_start(fmt, fm);
 
-	checker(fm, flag, pFmt, fmt);
-
-	va_end(fmt);
-	return (0);
+	return (checker(fm, flag, pFmt, fmt));
 }

@@ -8,7 +8,7 @@
  *
  * Return: It returns characters.
  */
-int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
+void checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 {
 	int i, j;
 
@@ -43,5 +43,4 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 		}
 		i++;
 	}
-	return (0);
 }

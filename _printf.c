@@ -12,7 +12,7 @@ int _printf(format fm, ...)
 	funcs pFmt[] = {
 		{"%c", print_char},
 		{"%s", print_str},
-		{"%%", print_percent}
+		{"%%", print_percent},
 	};
 
 	if (fm == NULL)

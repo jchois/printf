@@ -4,10 +4,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-/* TESTING */
-/*#include <stdio.h>*/
-/*#include <limits.h>*/
-/* END */
 
 /* ALIAS */
 typedef const char *format;
@@ -23,17 +19,17 @@ typedef const char *format;
 typedef struct tFormat
 {
 	char *id;
-	void (*f)();
+	int (*f)();
 } funcs;
 /* END */
 
 /* PROTOTYPES */
 int _printf(format, ...);
-void print_main(int);
-void print_char(va_list);
-void print_percent(void);
-void print_str(va_list);
-int checker(format, int, struct tFormat fmtF[], va_list);
+int print_main(int);
+int print_char(va_list);
+int print_percent(void);
+int print_str(va_list);
+void checker(format, int, struct tFormat fmtF[], va_list);
 /* END */
 
 #endif /*_PRINTF_*/

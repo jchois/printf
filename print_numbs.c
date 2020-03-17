@@ -9,7 +9,7 @@
 int print_decimal(va_list d)
 {
 	int i, n, f;
-	char *s = NULL;
+	char *s;
 
 	f = i = 0;
 	n = va_arg(d, int);
@@ -28,11 +28,13 @@ int print_decimal(va_list d)
 	if (n > 0)
 	{
 		s = malloc(sizeof(char) * 50);
-		while (n > 0)
+		while (n > 9)
 		{
 			s[i] = ((n % 10) + '0'), i++;
 			n /= 10;
 		}
+		if (n < 9)
+			s[i] = (n + '0'), i++;
 		if (f == 1)
 			s[i++] = '-', i++;
 		_reverse(s);

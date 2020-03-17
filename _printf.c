@@ -8,7 +8,7 @@
 int _printf(format fm, ...)
 {
 	va_list fmt;
-	int flag;
+	int flag, chk;
 	funcs pFmt[] = {
 		{"%c", print_char},
 		{"%s", print_str},
@@ -23,5 +23,8 @@ int _printf(format fm, ...)
 	flag = 0;
 	va_start(fmt, fm);
 
-	return (checker(fm, flag, pFmt, fmt));
+	chk = checker(fm, flag, pFmt, fmt);
+
+	va_end(fmt);
+	return (chk);
 }

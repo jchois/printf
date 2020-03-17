@@ -8,64 +8,42 @@
 
 int print_decimal(va_list d)
 {
-	char *str;
-	int i;
-
-	i = va_arg(d, int);
-
-	str = _itoa(i);
-
-	i = 0;
-
-	while (*(str + i))
-	{
-		print_main(*(str + i));
-		i++;
-	}
-
-	free(str);
-
-	return (i);
-}
-
-/**
- * _itoa - converts a int to string
- * @n: number to convert
- * Return: Return char
- */
-
-char *_itoa(int n)
-{
-	int i;
+	int i, n, f;
 	char *s;
+
+	f = i = 0;
+	n = va_arg(d, int);
 
 	s = malloc(sizeof(char *));
 
-	i = 0;
-
 	if (n < 0)
 	{
-		print_main('-');
+		f = print_main('-');
 		n *= -1;
 	}
 
 	if (n == 0)
 	{
-		*(s + i) = (n + '0');
+		return(print_main(n + '0'));
 	}
 
 	while (n > 0)
 	{
-		*(s + i) = ((n % 10) + '0');
+		s[i] = ((n % 10) + '0');
 		i++;
 		n /= 10;
 	}
 
+	s[i + 1] = '\0';
+
 	_reverse(s);
 
-	*(s + i + 1) = '\0';
+	for (i = 0; *(s + i); i++)
+		print_main(*(s + i));
 
-	return (s);
+	free(s);
+
+	return (i + f);
 }
 
 /**
@@ -97,3 +75,4 @@ void _reverse(char *str)
 		end--;
 	}
 }
+

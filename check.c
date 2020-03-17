@@ -16,9 +16,7 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 	while ((fmt && *(fmt + i)))
 	{
 		if ((*(fmt + i) != '%') && flag == 0)
-		{
 			ou += print_main(*(fmt + i));
-		}
 		else
 		{
 			while (j < 5)
@@ -45,6 +43,7 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 				}
 				j++;
 			}
+			j = 0;
 		}
 		i++;
 	}

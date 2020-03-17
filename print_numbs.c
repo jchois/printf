@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * print_decimal - Prints decimal value
+ * @d: Decimal to print
+ * Return: Return decimal number
+ */
+
 int print_decimal(va_list d)
 {
 	char *str;
@@ -21,6 +27,12 @@ int print_decimal(va_list d)
 
 	return (i);
 }
+
+/**
+ * _itoa - converts a int to string
+ * @n: number to convert
+ * Return: Return char
+ */
 
 char *_itoa(int n)
 {
@@ -56,6 +68,11 @@ char *_itoa(int n)
 	return (s);
 }
 
+/**
+ * _reverse - Reverse itoa function
+ * @str: char to reverse
+ * Return: Nothing
+ */
 void _reverse(char *str)
 {
 	char *start, *end, tmp;

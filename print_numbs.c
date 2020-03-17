@@ -8,7 +8,7 @@
 
 int print_decimal(va_list d)
 {
-	int i, n, f;
+	long int i, n, f;
 	char *s;
 
 	f = i = 0;

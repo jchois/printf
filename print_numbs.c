@@ -24,7 +24,7 @@ int print_decimal(va_list d)
 
 	if (n == 0)
 	{
-		return(print_main(n + '0'));
+		return (print_main(n + '0'));
 	}
 
 	while (n > 0)
@@ -75,4 +75,3 @@ void _reverse(char *str)
 		end--;
 	}
 }
-

@@ -33,7 +33,7 @@ int print_decimal(va_list d)
 			s[i] = ((n % 10) + '0'), i++;
 			n /= 10;
 		}
-		if (n < 9)
+		if (n <= 9)
 			s[i] = (n + '0'), i++;
 		if (f == 1)
 			s[i++] = '-', i++;

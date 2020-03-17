@@ -3,7 +3,7 @@
 int main(void)
 {
 	char c = 'C';
-	char *str = "Hello";
+	char *str = NULL;
 
 	/* "Print the character c" */
 	_printf("Print the character %c", c);
@@ -15,7 +15,7 @@ int main(void)
 	_printf("Print a %% sign");
 
 	/* "Print the number 5 since number 5 is great" */
-	printf("Print the number %i since number %d is great", 56644, 4);
+	_printf("Print the number %i since number %d is great", NULL, 9);
 
 	return (0);
 }

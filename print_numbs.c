@@ -10,31 +10,30 @@ int print_decimal(va_list d)
 {
 	long int i, n, f;
 	char *s;
+	unsigned long int x;
 
-	f = i = 0;
+	x = i = 0;
 	n = va_arg(d, int);
 
 	if (n < 0)
-	{
-		f = 1, n *= -1;
-	}
+		f = 1, x = -n;
 
-	if (n == 0)
+	if (x == 0)
 	{
 		s = malloc(sizeof(char) * 2);
 		*(s + i) = '0', i++;
 	}
 
-	if (n > 0)
+	if (x > 0)
 	{
 		s = malloc(sizeof(char) * 50);
-		while (n > 9)
+		while (x > 9)
 		{
-			s[i] = ((n % 10) + '0'), i++;
-			n /= 10;
+			s[i] = ((x % 10) + '0'), i++;
+			x /= 10;
 		}
-		if (n <= 9)
-			s[i] = (n + '0'), i++;
+		if (x <= 9)
+			s[i] = (x + '0'), i++;
 		if (f == 1)
 			s[i++] = '-', i++;
 		_reverse(s);

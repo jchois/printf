@@ -43,9 +43,8 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 				}
 				j++;
 			}
-			/*j = 0;*/
 		}
-		i++;
+		j = 0, i++;
 	}
 	va_end(fm);
 	return (ou);

@@ -14,7 +14,10 @@ int print_decimal(va_list d)
 	f = i = 0;
 	n = va_arg(d, int);
 
-	s = malloc(sizeof(char *));
+	s = malloc(50);
+
+	if (s == NULL)
+		s = "NULL";
 
 	if (n < 0)
 	{

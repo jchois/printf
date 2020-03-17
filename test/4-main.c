@@ -77,5 +77,10 @@ int main(void)
     len2 = printf("asd%\n");
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
+    len = _printf("[%d, %i]\n", 0, 0);
+    len2 = printf("[%d, %i]\n", 0, 0);
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+
     return (0);
 }

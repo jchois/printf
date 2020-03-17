@@ -24,19 +24,22 @@ int print_decimal(va_list d)
 
 	if (n == 0)
 	{
-		return (print_main(n + '0'));
+		s[i] = n + '0';
 	}
 
-	while (n > 0)
+	if (n > 0)
 	{
-		s[i] = ((n % 10) + '0');
-		i++;
-		n /= 10;
+		while (n > 0)
+		{
+			s[i] = ((n % 10) + '0');
+			i++;
+			n /= 10;
+		}
+		_reverse(s);
+		s[i + 1] = '\0';
 	}
 
 	s[i + 1] = '\0';
-
-	_reverse(s);
 
 	for (i = 0; *(s + i); i++)
 		print_main(*(s + i));

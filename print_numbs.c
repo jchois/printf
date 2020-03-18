@@ -9,25 +9,26 @@
 int print_decimal(va_list d)
 {
 	int i, f;
-	char *s;
+	char *s = NULL;
 	long int n;
 	unsigned long k;
 
-	f = i = 0;
-	n = va_arg(d, int), k = n;
+	n = va_arg(d, int);
+
+	f = i = 0, k = n;
+
+	s = calloc(21, sizeof(char));
 
 	if (n < 0)
 		f = 1, k = (n *= -1);
 
 	if (n == 0)
 	{
-		s = malloc(sizeof(char) * 2);
 		*(s + i) = '0', i++;
 	}
 
 	if (n > 0)
 	{
-		s = malloc(sizeof(char) * 50);
 		while (k > 0)
 		{
 			*(s + i) = ((k % 10) + '0'), i++;
@@ -42,6 +43,7 @@ int print_decimal(va_list d)
 	for (i = 0; *(s + i); i++)
 		print_main(*(s + i));
 
+	free(s);
 	return (i);
 }
 

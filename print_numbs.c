@@ -8,42 +8,40 @@
 
 int print_decimal(va_list d)
 {
-	long int i, n, f;
+	int i, f;
 	char *s;
-	unsigned long int x;
+	long int n;
+	unsigned long k;
 
-	x = i = 0;
-	n = va_arg(d, int);
+	f = i = 0;
+	n = va_arg(d, int), k = n;
 
 	if (n < 0)
-		f = 1, x = -n;
+		f = 1, k = (n *= -1);
 
-	if (x == 0)
+	if (n == 0)
 	{
 		s = malloc(sizeof(char) * 2);
 		*(s + i) = '0', i++;
 	}
 
-	if (x > 0)
+	if (n > 0)
 	{
 		s = malloc(sizeof(char) * 50);
-		while (x > 9)
+		while (k > 0)
 		{
-			s[i] = ((x % 10) + '0'), i++;
-			x /= 10;
+			*(s + i) = ((k % 10) + '0'), i++;
+			k /= 10;
 		}
-		if (x <= 9)
-			s[i] = (x + '0'), i++;
 		if (f == 1)
-			s[i++] = '-', i++;
+			*(s + i) = '-', f = 0, i++;
 		_reverse(s);
 	}
-	s[i] = '\0';
+	*(s + i) = '\0';
 
 	for (i = 0; *(s + i); i++)
 		print_main(*(s + i));
 
-	free(s);
 	return (i);
 }
 
@@ -76,4 +74,3 @@ void _reverse(char *str)
 		end--;
 	}
 }
-

@@ -14,7 +14,8 @@ int _printf(format fm, ...)
 		{"%s", print_str},
 		{"%%", print_percent},
 		{"%d", print_decimal},
-		{"%i", print_decimal}
+		{"%i", print_decimal},
+		{"%b", print_binary}
 	};
 
 	if (!fm)

@@ -48,6 +48,40 @@ int print_decimal(va_list d)
 }
 
 /**
+ * print_binary - Prints binary values.
+ * @lst: Decimal number to convert.
+ * Return: It returns the number of characters printed and print binaries.
+ */
+
+
+int print_binary(va_list lst)
+{
+	int i = 0;
+	unsigned int k;
+	char *str;
+
+	k = va_arg(lst, int);
+	str = malloc(sizeof(char) * 50);
+
+	if (k == 0)
+		*(str + i++) = '0';
+
+	while (k > 0)
+	{
+		*(str + i) = ((k % 2) + '0'), i++;
+		k /= 2;
+	}
+	_reverse(str);
+	*(str + i) = '\0';
+
+	for (i = 0; *(str + i) != '\0'; i++)
+		print_main(*(str + i));
+
+	free(str);
+	return (i);
+}
+
+/**
  * _reverse - Reverse itoa function
  * @str: char to reverse
  * Return: Nothing

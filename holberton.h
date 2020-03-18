@@ -30,6 +30,7 @@ int print_char(va_list);
 int print_percent(void);
 int print_str(va_list);
 int print_decimal(va_list);
+int print_binary(va_list);
 void _reverse(char *);
 int checker(format, int, struct tFormat fmtF[], va_list);
 /* END */

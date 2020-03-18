@@ -61,7 +61,7 @@ int print_binary(va_list lst)
 	char *str;
 
 	k = va_arg(lst, int);
-	str = malloc(sizeof(char) * 50);
+	str = calloc(sizeof(char), 50);
 
 	if (k == 0)
 		*(str + i++) = '0';

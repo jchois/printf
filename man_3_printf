@@ -19,7 +19,7 @@ which start with a
 %
 character, indicate the location and method to translate a piece of data to characters.
 
-sp
+.sp
 .B
 FORMAT SPECIFIERS
 

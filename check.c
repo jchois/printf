@@ -19,14 +19,16 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 			ou += print_main(*(fmt + i));
 		else
 		{
-			while (j < 6)
+			while (j < 8)
 			{
 				if (((*(fmt + i + 1)) == fmtF[j].id[1]) && flag == 0)
 				{
-					ou += (fmtF[j].f)(fm), j = 0, flag = 1;
+					ou += (fmtF[j].f)(fm, ((*(fmt + i + 1)) == 'b' ? 2 :
+							       ((*(fmt + i + 1)) == 'o' ? 8 :
+								10))), j = 0, flag = 1;
 					break;
 				}
-				if (j == 5 && flag == 0)
+				if (j == 7 && flag == 0)
 				{
 					if ((*(fmt + i + 1)))
 						ou += print_main(*(fmt + i));

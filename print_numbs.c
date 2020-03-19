@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * print_decimal - Prints decimal value
- * @d: Decimal to print
- * Return: Return decimal number
+ * print_integer - Prints integer values.
+ * @d: integer to print.
+ * Return: Return integer numbers.
  */
 
-int print_decimal(va_list d)
+int print_integer(va_list d)
 {
 	int i, f;
 	char *s = NULL;
@@ -23,9 +23,7 @@ int print_decimal(va_list d)
 		f = 1, k = (n *= -1);
 
 	if (n == 0)
-	{
 		*(s + i) = '0', i++;
-	}
 
 	if (n > 0)
 	{
@@ -48,13 +46,14 @@ int print_decimal(va_list d)
 }
 
 /**
- * print_binary - Prints binary values.
+ * print_in_bases - Prints in bases values.
  * @lst: Decimal number to convert.
- * Return: It returns the number of characters printed and print binaries.
+ * @base: This is the base that will take our program.
+ * Return: It returns the number of characters printed.
  */
 
 
-int print_binary(va_list lst)
+int print_in_bases(va_list lst, int base)
 {
 	int i = 0;
 	unsigned int k;
@@ -68,8 +67,8 @@ int print_binary(va_list lst)
 
 	while (k > 0)
 	{
-		*(str + i) = ((k % 2) + '0'), i++;
-		k /= 2;
+		*(str + i) = ((k % base) + '0'), i++;
+		k /= base;
 	}
 	_reverse(str);
 	*(str + i) = '\0';

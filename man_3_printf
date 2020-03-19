@@ -45,8 +45,16 @@ decimal
 - It prints a integer.
 .sp
 .B
+%u
+- It prints an unsigned integer.
+.sp
+.B
 %b
 - It prints a integer converted to binary.
+.sp
+.B
+%o
+- It prints a integer converted to octal.
 
 
 .SH RETURN VALUE

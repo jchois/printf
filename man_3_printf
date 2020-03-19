@@ -28,7 +28,7 @@ FORMAT SPECIFIERS
 - It prints a single character.
 .sp
 .B
- %s
+%s
 - It prints an array of character without the terminating null byte ('\\0').
 .B
 (Also known as String)
@@ -43,6 +43,10 @@ decimal
 .B
 %i
 - It prints a integer.
+.sp
+.B
+%b
+- It prints a integer converted to binary.
 
 
 .SH RETURN VALUE
@@ -67,4 +71,4 @@ Elkin Mejia
 .PP
 Juliana Chois
 .B
-(1657@holbertonschool.com).
+(1657@holbertonschool.com)

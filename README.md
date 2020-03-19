@@ -8,6 +8,7 @@ This project ```_printf``` recreate the ```printf``` with our knowledge of C pro
 int _printf(format fm, ...)
 ```
 
+
 ## Files
 
 | Files    			| Description                          							  |
@@ -17,7 +18,8 @@ int _printf(format fm, ...)
 | holberton.h		| Header files for the the project.								  | 
 | man_3_printf 		| Manpage for _printf. 											  |
 | print_functions.c | Contains the first functions of the project. ("%c", "%s", "%%") |
-| print_numbs.c 	| Containd other functions for the project. ("%d", "%i")		  |
+| print_numbs.c 	| Containd other functions for the project. ("%d", "%i", "%b", "%o", "%u")		  |
+
 
 
 ## Compilate and run tests
@@ -30,6 +32,7 @@ Files are compiled this way:
 $ gcc -Wall -Wno-format -Werror -Wextra -pedantic *.c 
 $ ./a.out
 ```
+
 
 ## Authors
 

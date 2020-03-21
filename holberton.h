@@ -32,6 +32,7 @@ int print_str(va_list);
 int print_integer(va_list);
 int print_in_bases(va_list, int, int);
 int print_rev(va_list);
+int rot13(va_list);
 void _reverse(char *);
 int checkBase(char);
 int checker(format, int, struct tFormat fmtF[], va_list);

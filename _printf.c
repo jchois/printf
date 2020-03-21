@@ -20,7 +20,8 @@ int _printf(format fm, ...)
 		{"%u", print_in_bases},
 		{"%x", print_in_bases},
 		{"%X", print_in_bases},
-		{"%r", print_rev}
+		{"%r", print_rev},
+		{"%R", rot13}
 	};
 
 	if (!fm)

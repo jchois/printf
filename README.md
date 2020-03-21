@@ -33,6 +33,17 @@ $ gcc -Wall -Wno-format -Werror -Wextra -pedantic *.c
 $ ./a.out
 ```
 
+## Example
+
+Print hello world:
+
+```
+_printf("%s, %s!\n", "Hello", "World");
+
+OUTPUT:
+
+$ Hello, World!
+```
 
 ## Authors
 

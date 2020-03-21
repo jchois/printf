@@ -19,16 +19,15 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 			ou += print_main(*(fmt + i));
 		else
 		{
-			while (j < 8)
+			while (j < 10)
 			{
 				if (((*(fmt + i + 1)) == fmtF[j].id[1]) && flag == 0)
 				{
-					ou += (fmtF[j].f)(fm, ((*(fmt + i + 1)) == 'b' ? 2 :
-							       ((*(fmt + i + 1)) == 'o' ? 8 :
-								10))), j = 0, flag = 1;
+					ou += (fmtF[j].f)(fm, checkBase(*(fmt + i + 1)),
+							(*(fmt + i + 1) == 'X' ? 32 : 0)), j = 0, flag = 1;
 					break;
 				}
-				if (j == 7 && flag == 0)
+				if (j == 9 && flag == 0)
 				{
 					if ((*(fmt + i + 1)))
 						ou += print_main(*(fmt + i));
@@ -50,4 +49,19 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 	}
 	va_end(fm);
 	return (ou);
+}
+
+/**
+* checkBase - Check what base choose.
+* @fmt: Format selected.
+*
+* Return: Base of number.
+*/
+int checkBase(char fmt)
+{
+	return (fmt == 'b' ? 2 :
+		fmt == 'o' ? 8 :
+		fmt == 'x' ? 16 :
+		fmt == 'X' ? 16 :
+		10);
 }

@@ -17,7 +17,9 @@ int _printf(format fm, ...)
 		{"%i", print_integer},
 		{"%b", print_in_bases},
 		{"%o", print_in_bases},
-		{"%u", print_in_bases}
+		{"%u", print_in_bases},
+		{"%x", print_in_bases},
+		{"%X", print_in_bases}
 	};
 
 	if (!fm)

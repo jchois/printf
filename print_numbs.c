@@ -49,15 +49,16 @@ int print_integer(va_list d)
  * print_in_bases - Prints in bases values.
  * @lst: Decimal number to convert.
  * @base: This is the base that will take our program.
+ * @selector: This is the option to set upper or lower hexa.
  * Return: It returns the number of characters printed.
  */
 
 
-int print_in_bases(va_list lst, int base)
+int print_in_bases(va_list lst, int base, int selector)
 {
 	int i = 0;
 	unsigned int k;
-	char *str;
+	char *str, *put = "0123456789abcdef";
 
 	k = va_arg(lst, int);
 	str = calloc(sizeof(char), 50);
@@ -67,7 +68,7 @@ int print_in_bases(va_list lst, int base)
 
 	while (k > 0)
 	{
-		*(str + i) = ((k % base) + '0'), i++;
+		*(str + i++) = (*(put + (k % base)) - ((k % base) < 10 ? 0 : selector));
 		k /= base;
 	}
 	_reverse(str);

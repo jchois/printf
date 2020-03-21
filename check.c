@@ -19,7 +19,7 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 			ou += print_main(*(fmt + i));
 		else
 		{
-			while (j < 10)
+			while (j < 11)
 			{
 				if (((*(fmt + i + 1)) == fmtF[j].id[1]) && flag == 0)
 				{
@@ -27,7 +27,7 @@ int checker(format fmt, int flag, struct tFormat fmtF[], va_list fm)
 							(*(fmt + i + 1) == 'X' ? 32 : 0)), j = 0, flag = 1;
 					break;
 				}
-				if (j == 9 && flag == 0)
+				if (j == 10 && flag == 0)
 				{
 					if ((*(fmt + i + 1)))
 						ou += print_main(*(fmt + i));

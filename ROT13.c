@@ -9,7 +9,7 @@
 
 int rot13(va_list str)
 {
-	int i = 0, r = 0;
+	int i = 0, r = 0, c = 0;
 	char *s;
 	char *abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *nop = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
@@ -17,12 +17,7 @@ int rot13(va_list str)
 	s = va_arg(str, char *);
 
 	if (!s)
-	{
-		s = "(ahyy)";
-		while (*(s + i))
-			print_main(*(s + i++));
-		return (i);
-	}
+		s = "(null)";
 
 	while (*(s + i))
 	{
@@ -30,13 +25,15 @@ int rot13(va_list str)
 		{
 			if (*(s + i) == *(abc + r))
 			{
-				print_main(*(nop + r));
+				c += print_main(*(nop + r));
 				break;
 			}
 			r++;
 		}
+		if (*(s + i) != *(abc + r))
+			c += print_main(*(s + i));
 		i++, r = 0;
 	}
 
-	return (i);
+	return (c);
 }
